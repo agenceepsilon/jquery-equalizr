@@ -1,0 +1,25 @@
+{
+    "name": "jquery-equalizr",
+    "version": "1.0.0",
+    "description": "",
+    "main": "jquery.equalizr.js",
+    "ignore": [
+        "*.md",
+        "*.html",
+        ".gitignore"
+    ],
+    "dependencies": {
+        "jquery": "1.11.0"
+    },
+    "keywords": [
+        "jquery",
+        "equal",
+        "columns"
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+    ]
+}
