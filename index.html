@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <title>jQuery Equalizr</title>
     <style>
+        .clearfix:before,
+        .clearfix:after {
+            content: " "; /* 1 */
+            display: table; /* 2 */
+        }
+        .clearfix:after {
+            clear: both;
+        }
+        .clearfix {
+            *zoom: 1;
+        }
         body {
             margin: 0;
         }
@@ -23,7 +34,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <div class="row">
+    <div class="row clearfix">
         <div class="col">
             <div class="module">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit eros ac faucibus pretium. Sed
