@@ -4,13 +4,22 @@ Apply the greater height has all the same columns.
 
 ## Parameters
 
-| Options     | Types   | Defaults     | Others            |
-| ----------- | ------- | ------------ | ----------------- |
-| classRow    | string  | row-equalizr | Choose your class |
-| classCol    | string  | col-equalizr | Choose your class |
-| animate     | boolean | false        | true              |
-| animateTime | number  | 400          | Your time         |
-| afterLoad   | boolean | false        | true              |
+| Options       | Types   | Defaults         | Others            |
+| ------------- | ------- | ---------------- | ----------------- |
+| classSelector | string  | ``""``             | Choose your class |
+| classRow      | string  | ``row-equalizr`` | Choose your class |
+| classCol      | string  | ``col-equalizr`` | Choose your class |
+| animate       | boolean | ``false``        | ``true``          |
+| animateTime   | number  | ``400``          | Your time         |
+| afterLoad     | boolean | ``false``        | ``true            |
+
+### classRow
+
+...
+
+### classCol
+
+...
 
 ### Animate
 

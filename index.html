@@ -25,18 +25,22 @@
 <div class="wrapper">
     <div class="row">
         <div class="col">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit eros ac faucibus pretium. Sed tempus
-            eros vel elementum eleifend. Fusce arcu massa, sodales vel convallis ac, rhoncus eu nisl. Praesent vitae
-            nisl porttitor, tincidunt tortor et, aliquam magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Ut non consectetur dui. Aenean commodo egestas augue, quis interdum risus. Morbi pretium rutrum malesuada.
-            Phasellus et sagittis lacus. Sed consequat mollis nisi. Ut consectetur vulputate felis vitae consequat.
-            Nulla vitae risus faucibus, sagittis libero et, viverra nulla.
+            <div class="module">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit eros ac faucibus pretium. Sed
+                tempus eros vel elementum eleifend. Fusce arcu massa, sodales vel convallis ac, rhoncus eu nisl.
+                Praesent vitae nisl porttitor, tincidunt tortor et, aliquam magna. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit. Ut non consectetur dui. Aenean commodo egestas augue, quis interdum risus.
+                Morbi pretium rutrum malesuada. Phasellus et sagittis lacus. Sed consequat mollis nisi. Ut consectetur
+                vulputate felis vitae consequat. Nulla vitae risus faucibus, sagittis libero et, viverra nulla.
+            </div>
         </div>
         <div class="col">
-            Morbi consequat lorem et magna tempor cursus. Nullam egestas dui justo, et dapibus orci posuere venenatis.
-            Etiam iaculis posuere leo a sagittis. Nam id feugiat mi. Phasellus ut ultricies leo. Nam risus metus,
-            fringilla eu elementum vel, auctor a eros. Phasellus a magna orci. Vivamus viverra elit pharetra, elementum
-            sapien id, imperdiet lacus. Aliquam ac porttitor urna.
+            <div class="module">
+                Morbi consequat lorem et magna tempor cursus. Nullam egestas dui justo, et dapibus orci posuere
+                venenatis. Etiam iaculis posuere leo a sagittis. Nam id feugiat mi. Phasellus ut ultricies leo. Nam
+                risus metus, fringilla eu elementum vel, auctor a eros. Phasellus a magna orci. Vivamus viverra elit
+                pharetra, elementum sapien id, imperdiet lacus. Aliquam ac porttitor urna.
+            </div>
         </div>
     </div>
 </div>
@@ -45,6 +49,7 @@
 <script>
     $(document).ready(function(){
         $(".row").equalizr({
+            classSelector: ".module",
             animate: true
         });
     });

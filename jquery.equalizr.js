@@ -7,6 +7,7 @@
 (function($){
     $.fn.equalizr = function(opts){
         var defaults = {
+            classSelector: "",
             classRow: "row-equalizr",
             classCol: "col-equalizr",
             animate: false,
@@ -18,40 +19,42 @@
 
         return this.each(function(){
             var $elem = $(this);
-            var $elemChild = $($elem).children();
-            var $elemChildLength = $($elemChild).length;
+            var $elemChild;
 
-            if($elemChildLength > 1){
+            if(params.classSelector){
+                $elemChild = $elem.find(params.classSelector);
+            } else {
+                $elemChild = $elem.children();
+            }
 
+            function findHeight(){
+                var $maxHeight = -1;
+
+                $($elemChild).each(function(){
+                    $maxHeight = $maxHeight > $(this).outerHeight() ? $maxHeight : $(this).outerHeight();
+
+                    $(this).addClass(params.classCol);
+
+                    if(params.animate){
+                        $(this).animate({
+                            height: $maxHeight
+                        }, params.animateTime);
+                    } else {
+                        $(this).height($maxHeight);
+                    }
+                });
+            }
+
+            if($elemChild.length > 1){
                 // Add row class
                 $elem.addClass(params.classRow);
 
-                function maxHeight(){
-                    var maxHeight = -1;
-
-                    $($elemChild).each(function(){
-                        maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
-                    });
-
-                    $($elemChild).each(function(){
-                        $(this).addClass(params.classCol);
-
-                        if(params.animate){
-                            $(this).animate({
-                                height: maxHeight
-                            }, params.animateTime);
-                        } else{
-                            $(this).height(maxHeight);
-                        }
-                    });
-                }
-
                 if(params.afterLoad){
                     $(window).load(function(){
-                        maxHeight();
+                        findHeight();
                     });
-                } else{
-                    maxHeight();
+                } else {
+                    findHeight();
                 }
             }
         });
