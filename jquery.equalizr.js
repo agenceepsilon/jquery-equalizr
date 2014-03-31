@@ -31,7 +31,7 @@
                 var $maxHeight = -1;
 
                 $($elemChild).each(function(){
-                    $maxHeight = $maxHeight > $(this).outerHeight() ? $maxHeight : $(this).outerHeight();
+                    $maxHeight = $maxHeight > $(this).height() ? $maxHeight : $(this).height();
 
                     $(this).addClass(params.classCol);
 
