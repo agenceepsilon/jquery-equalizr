@@ -31,13 +31,21 @@
                 var $maxHeight = -1;
 
                 $($elemChild).each(function(){
+                    var $elemChildHeight = $(this).height();
+                    var $elemChildMore = $(this).outerHeight();
+                    var $elemChildGap = $elemChildMore - $elemChildHeight;
+
+                    console.log($elemChildHeight);
+                    console.log($elemChildMore);
+                    console.log($elemChildGap);
+
                     $maxHeight = $maxHeight > $(this).height() ? $maxHeight : $(this).height();
 
                     $(this).addClass(params.classCol);
 
                     if(params.animate){
                         $(this).animate({
-                            height: $maxHeight
+                            height: $maxHeight - $elemChildGap
                         }, params.animateTime);
                     } else {
                         $(this).height($maxHeight);
