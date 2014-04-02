@@ -29,7 +29,7 @@ Change the default class applied.
 
 Select ``true`` to animate the new height of the columns.
 
-#### animateTime
+### animateTime
 
 Choose the time of the animation.
 

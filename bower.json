@@ -6,7 +6,8 @@
     "ignore": [
         "*.md",
         "*.html",
-        ".gitignore"
+        ".gitignore",
+        "equalizr.jquery.json"
     ],
     "dependencies": {
         "jquery": "~1.8.0"
