@@ -1,0 +1,28 @@
+{
+    "name": "equalizr",
+    "title": "jQuery Equalizr",
+    "description": "",
+    "version": "1.0.0",
+    "keywords": [
+        "jquery",
+        "equal",
+        "columns"
+    ],
+    "author": {
+        "name": "Agence Epsilon",
+        "url": "https://github.com/agenceepsilon/jquery-equalizr"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+    ],
+    "bugs": "https://github.com/agenceepsilon/jquery-equalizr/issues",
+    "homepage": "https://github.com/agenceepsilon/jquery-equalizr",
+    "docs": "https://github.com/agenceepsilon/jquery-equalizr",
+    "download": "https://github.com/agenceepsilon/jquery-equalizr",
+    "dependencies": {
+        "jquery": ">=1.8"
+    }
+}

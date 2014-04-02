@@ -31,13 +31,13 @@
                 var $maxHeight = 0;
 
                 $($elemChild).each(function(){
-                    var $elemHeight = $(this).height();
+                    var $elemChildHeight = $(this).height();
 
                     // Find the most height beetween each childs elements
-                    if($maxHeight > $elemHeight){
+                    if($maxHeight > $elemChildHeight){
                         $maxHeight = $maxHeight;
                     } else {
-                        $maxHeight = $elemHeight;
+                        $maxHeight = $elemChildHeight;
                     }
                 });
                 initHeight($maxHeight);
