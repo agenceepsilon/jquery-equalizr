@@ -1,4 +1,4 @@
-# jQuery Equalizr [![GitHub version](https://badge.fury.io/gh/agenceepsilon%2Fjquery-equalizr.svg)](http://badge.fury.io/gh/agenceepsilon%2Fjquery-equalizr) [![Bower version](https://badge.fury.io/bo/jquery-equalizr.png)](http://badge.fury.io/bo/jquery-equalizr)
+# jQuery Equalizr [![GitHub version](https://badge.fury.io/gh/agenceepsilon%2Fjquery-equalizr.png)](http://badge.fury.io/gh/agenceepsilon%2Fjquery-equalizr) [![Bower version](https://badge.fury.io/bo/jquery-equalizr.png)](http://badge.fury.io/bo/jquery-equalizr)
 
 Apply the greater height has all the same columns.
 
