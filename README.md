@@ -10,7 +10,7 @@ Apply the greater height has all the same columns.
 | classRow      | string  | ``row-equalizr`` | Choose your class |
 | classCol      | string  | ``col-equalizr`` | Choose your class |
 | animate       | boolean | ``true``         | ``false``         |
-| animateTime   | number  | ``400``          | Your time         |
+| animateTime   | number  | ``400``          | Choose your time  |
 | afterLoad     | boolean | ``false``        | ``true``          |
 
 ### classSelector
