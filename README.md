@@ -6,12 +6,16 @@ Apply the greater height has all the same columns.
 
 | Options       | Types   | Defaults         | Others            |
 | ------------- | ------- | ---------------- | ----------------- |
-| classSelector | string  | ``""``             | Choose your class |
+| classSelector | string  | ``""``           | Choose your class |
 | classRow      | string  | ``row-equalizr`` | Choose your class |
 | classCol      | string  | ``col-equalizr`` | Choose your class |
-| animate       | boolean | ``false``        | ``true``          |
+| animate       | boolean | ``true``         | ``false``         |
 | animateTime   | number  | ``400``          | Your time         |
-| afterLoad     | boolean | ``false``        | ``true            |
+| afterLoad     | boolean | ``false``        | ``true``          |
+
+### classSelector
+
+...
 
 ### classRow
 
@@ -21,15 +25,15 @@ Apply the greater height has all the same columns.
 
 ...
 
-### Animate
+### animate
 
 Select ``true`` to animate the new height of the columns.
 
-#### AnimateTime
+#### animateTime
 
 Choose the time of the animation.
 
-### AfterLoad
+### afterLoad
 
 Initialize the new height after loading all images.
 

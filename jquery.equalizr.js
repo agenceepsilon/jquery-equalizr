@@ -10,7 +10,7 @@
             classSelector: "",
             classRow: "row-equalizr",
             classCol: "col-equalizr",
-            animate: false,
+            animate: true,
             animateTime: 400,
             afterLoad: false
         };
@@ -28,27 +28,33 @@
             }
 
             function findHeight(){
-                var $maxHeight = -1;
+                var $maxHeight = 0;
 
                 $($elemChild).each(function(){
-                    var $elemChildHeight = $(this).height();
-                    var $elemChildMore = $(this).outerHeight();
-                    var $elemChildGap = $elemChildMore - $elemChildHeight;
+                    var $elemHeight = $(this).height();
 
-                    console.log($elemChildHeight);
-                    console.log($elemChildMore);
-                    console.log($elemChildGap);
+                    // Find the most height beetween each childs elements
+                    if($maxHeight > $elemHeight){
+                        $maxHeight = $maxHeight;
+                    } else {
+                        $maxHeight = $elemHeight;
+                    }
+                });
+                initHeight($maxHeight);
+            }
 
-                    $maxHeight = $maxHeight > $(this).height() ? $maxHeight : $(this).height();
-
+            function initHeight(height){
+                $($elemChild).each(function(){
+                    // Add col class to each childs elements
                     $(this).addClass(params.classCol);
 
+                    // Active animation
                     if(params.animate){
                         $(this).animate({
-                            height: $maxHeight - $elemChildGap
+                            height: height
                         }, params.animateTime);
                     } else {
-                        $(this).height($maxHeight);
+                        $(this).height(height);
                     }
                 });
             }

@@ -22,13 +22,16 @@
             width: 600px;
             margin: 0 auto;
         }
+        .row {
+            margin-bottom: 20px;
+        }
         .col {
             background: red;
             width: 290px;
             float: left;
         }
         .col:first-child {
-            margin-right: 10px;
+            margin-right: 20px;
         }
     </style>
 </head>
@@ -36,7 +39,7 @@
 <div class="wrapper">
     <div class="row clearfix">
         <div class="col">
-            <div class="module" style="padding: 10px 0;">
+            <div class="module">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit eros ac faucibus pretium. Sed
                 tempus eros vel elementum eleifend. Fusce arcu massa, sodales vel convallis ac, rhoncus eu nisl.
                 Praesent vitae nisl porttitor, tincidunt tortor et, aliquam magna. Lorem ipsum dolor sit amet,
@@ -54,15 +57,38 @@
             </div>
         </div>
     </div>
+    <div class="row clearfix">
+        <div class="col">
+            <div class="module">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit eros ac faucibus pretium. Sed
+                tempus eros vel elementum eleifend. Fusce arcu massa, sodales vel convallis ac, rhoncus eu nisl.
+                Praesent vitae nisl porttitor, tincidunt tortor et, aliquam magna.
+            </div>
+        </div>
+        <div class="col">
+            <div class="module">
+                Morbi consequat lorem et magna tempor cursus. Nullam egestas dui justo, et dapibus orci posuere
+                venenatis. Etiam iaculis posuere leo a sagittis. Nam id feugiat mi. Phasellus ut ultricies leo. Nam
+                risus metus, fringilla eu elementum vel, auctor a eros. Phasellus a magna orci. Vivamus viverra elit
+                pharetra, elementum sapien id, imperdiet lacus. Aliquam ac porttitor urna.
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col">
+            <div class="module">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit eros ac faucibus pretium. Sed
+                tempus eros vel elementum eleifend. Fusce arcu massa, sodales vel convallis ac, rhoncus eu nisl.
+                Praesent vitae nisl porttitor, tincidunt tortor et, aliquam magna.
+            </div>
+        </div>
+    </div>
 </div>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="jquery.equalizr.js"></script>
 <script>
     $(document).ready(function(){
-        $(".row").equalizr({
-            classSelector: ".module",
-            animate: true
-        });
+        $(".row").equalizr();
     });
 </script>
 </body>
