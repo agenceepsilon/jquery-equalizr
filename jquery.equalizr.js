@@ -31,7 +31,7 @@
                 var $maxHeight = 0;
 
                 $($elemChild).each(function(){
-                    var $elemChildHeight = $(this).height();
+                    var $elemChildHeight = $(this).outerHeight();
 
                     // Find the most height beetween each childs elements
                     if($maxHeight > $elemChildHeight){
@@ -43,15 +43,19 @@
                 initHeight($maxHeight);
             }
 
-            function initHeight(height){
+            function initHeight(maxHeight){
                 $($elemChild).each(function(){
+                    var $elemChildOuterHeight = $(this).outerHeight();
+                    var $elemChildHeight = $(this).height();
+                    var $elemChildGap = $elemChildOuterHeight - $elemChildHeight;
+
                     // Add col class to each childs elements
                     $(this).addClass(params.classCol);
 
                     // Active animation
                     if(params.animate){
                         $(this).animate({
-                            height: height
+                            height: maxHeight - $elemChildGap
                         }, params.animateTime);
                     } else {
                         $(this).height(height);
