@@ -18,8 +18,8 @@
         var params = $.extend(defaults, opts);
 
         return this.each(function(){
-            var $elem = $(this);
-            var $elemChild;
+            var $elem = $(this),
+                $elemChild;
 
             if(params.classSelector){
                 $elemChild = $elem.find(params.classSelector);
@@ -45,9 +45,9 @@
 
             function initHeight(maxHeight){
                 $($elemChild).each(function(){
-                    var $elemChildOuterHeight = $(this).outerHeight();
-                    var $elemChildHeight = $(this).height();
-                    var $elemChildGap = $elemChildOuterHeight - $elemChildHeight;
+                    var $elemChildOuterHeight = $(this).outerHeight(),
+                        $elemChildHeight = $(this).height(),
+                        $elemChildGap = $elemChildOuterHeight - $elemChildHeight;
 
                     // Add col class to each childs elements
                     $(this).addClass(params.classCol);
