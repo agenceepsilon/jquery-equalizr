@@ -1,5 +1,5 @@
 /*!
- * jQuery Equalizr v1.0.0 (https://github.com/agenceepsilon/jquery-equalizr)
+ * jQuery Equalizr v1.0.1 (https://github.com/agenceepsilon/jquery-equalizr)
  * Copyright 2014 Agence Epsilon.
  * Licensed under MIT (http://www.opensource.org/licenses/mit-license.php)
  */

@@ -41,9 +41,13 @@ Initialize the new height after loading all images.
 
 Target parent block that contains columns / modules to adjust.
 
-    $(".row-class").equalizr();
+    $(".row").equalizr();
 
 ## Changelogs
+
+### 1.0.1
+
+* Fix no animate wrong height ([#1](https://github.com/agenceepsilon/jquery-equalizr/issues/1))
 
 ### 1.0.0
 

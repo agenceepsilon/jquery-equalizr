@@ -1,6 +1,6 @@
 {
     "name": "jquery-equalizr",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Easily create columns of the same height!",
     "main": "jquery.equalizr.js",
     "ignore": [
