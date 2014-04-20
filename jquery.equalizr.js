@@ -58,7 +58,7 @@
                             height: maxHeight - $elemChildGap
                         }, params.animateTime);
                     } else {
-                        $(this).height(maxHeight);
+                        $(this).height(maxHeight - $elemChildGap);
                     }
                 });
             }
