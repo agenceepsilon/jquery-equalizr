@@ -28,19 +28,19 @@
             }
 
             function findHeight(){
-                var $maxHeight = 0;
+                var $elemMaxHeight = 0;
 
                 $($elemChild).each(function(){
                     var $elemChildOuterHeight = $(this).outerHeight();
 
                     // Find the most height beetween each childs elements
-                    if($maxHeight > $elemChildOuterHeight){
-                        $maxHeight = $maxHeight;
+                    if($elemMaxHeight > $elemChildOuterHeight){
+                        $elemMaxHeight = $elemMaxHeight;
                     } else {
-                        $maxHeight = $elemChildOuterHeight;
+                        $elemMaxHeight = $elemChildOuterHeight;
                     }
                 });
-                initHeight($maxHeight);
+                initHeight($elemMaxHeight);
             }
 
             function initHeight(maxHeight){
