@@ -1,80 +1,99 @@
-/*!
- * jQuery Equalizr v1.0.1 (https://github.com/agenceepsilon/jquery-equalizr)
- * Copyright 2014 Agence Epsilon.
- * Licensed under MIT (http://www.opensource.org/licenses/mit-license.php)
+/**
+ * jQuery Equilizr (https://github.com/agenceepsilon/jquery-equalizr)
+ *
+ * @version 2.0.0-beta.1
+ * @author Agence Epsilon (http://www.agenceepsilon.com)
+ *
+ * @copyright 2014 Agence Epsilon
+ * @license MIT (http://www.opensource.org/licenses/mit-license.php)
+ *
  */
 
 (function($){
-    $.fn.equalizr = function(opts){
+    $.fn.equalizr = function(options){
+
+        // Default settings
         var defaults = {
-            classSelector: "",
-            classRow: "row-equalizr",
-            classCol: "col-equalizr",
-            animate: true,
-            animateTime: 400,
+            elemClass: "",
+            rowClass: "row-equalizr",
+            colClass: "col-equalizr",
+            animation: true,
+            duration: 400,
             afterLoad: false
         };
 
-        var params = $.extend(defaults, opts);
+        var settings = $.extend({}, defaults, options);
 
         return this.each(function(){
             var $elem = $(this),
                 $elemChild;
 
-            if(params.classSelector){
-                $elemChild = $elem.find(params.classSelector);
-            } else {
+            // Initiate the chilren element
+            if(settings.elemClass){
+                $elemChild = settings.elemClass;
+            } else{
                 $elemChild = $elem.children();
             }
 
-            function findHeight(){
-                var $elemMaxHeight = 0;
+            /**
+             * Find the greatest height
+             */
+            function maxHeight(){
+                var maxHeight = 0;
 
-                $($elemChild).each(function(){
-                    var $elemChildOuterHeight = $(this).outerHeight();
+                $elemChild.each(function(){
+                    var elemHeight = $(this).outerHeight();
 
-                    // Find the most height beetween each childs elements
-                    if($elemMaxHeight > $elemChildOuterHeight){
-                        $elemMaxHeight = $elemMaxHeight;
-                    } else {
-                        $elemMaxHeight = $elemChildOuterHeight;
+                    if(elemHeight > maxHeight){
+                        maxHeight = elemHeight;
+                    } else{
+                        maxHeight = maxHeight;
                     }
                 });
-                initHeight($elemMaxHeight);
+
+                initHeight(maxHeight);
             }
 
+            /**
+             * Loading new heights
+             *
+             * @param maxHeight
+             */
             function initHeight(maxHeight){
-                $($elemChild).each(function(){
-                    var $elemChildOuterHeight = $(this).outerHeight(),
-                        $elemChildHeight = $(this).height(),
-                        $elemChildGap = $elemChildOuterHeight - $elemChildHeight;
+                $elemChild.each(function(){
+                    var elemHeight = $(this).height(),
+                        elemOuterHeight = $(this).outerHeight(),
+                        heightGap = elemOuterHeight - elemHeight,
+                        newHeight = maxHeight - heightGap;
 
-                    // Add col class to each childs elements
-                    $(this).addClass(params.classCol);
+                    $(this).addClass(settings.colClass);
 
-                    // Active animation
-                    if(params.animate){
+                    if(settings.animation){
                         $(this).animate({
-                            height: maxHeight - $elemChildGap
-                        }, params.animateTime);
-                    } else {
-                        $(this).height(maxHeight - $elemChildGap);
+                            "height": newHeight
+                        }, settings.duration);
+                    }
+                    else{
+                        $(this).css("height", newHeight);
                     }
                 });
             }
 
+            // Activate the plugin if there more than one child.
             if($elemChild.length > 1){
-                // Add row class
-                $elem.addClass(params.classRow);
 
-                if(params.afterLoad){
+                // Add class to main element
+                $elem.addClass(settings.rowClass);
+
+                // Wait until all images are loaded
+                if(settings.afterLoad){
                     $(window).load(function(){
-                        findHeight();
+                        maxHeight();
                     });
-                } else {
-                    findHeight();
+                } else{
+                    maxHeight();
                 }
             }
         });
     };
-})(jQuery);
+}(jQuery));
