@@ -1,7 +1,7 @@
 /**
  * jQuery Equalizr (https://github.com/agenceepsilon/jquery-equalizr)
  *
- * @version 2.0.0-beta.1
+ * @version 2.0.0-beta.2
  * @author Agence Epsilon (http://www.agenceepsilon.com)
  *
  * @copyright 2014 Agence Epsilon
@@ -17,6 +17,7 @@
             elemClass: "",
             rowClass: "row-equalizr",
             colClass: "col-equalizr",
+            maxHeight: "",
             animation: true,
             duration: 400,
             afterLoad: false
@@ -40,21 +41,22 @@
              *
              * Find the greatest height
              *
+             * @param maxHeight
              */
-            function maxHeight(){
-                var maxHeight = 0;
+            function maxHeight(maxHeight){
+                var newMaxHeight = maxHeight;
 
                 $elemChild.each(function(){
                     var elemOuterHeight = $(this).outerHeight();
 
-                    if(elemOuterHeight > maxHeight){
-                        maxHeight = elemOuterHeight;
+                    if(elemOuterHeight > newMaxHeight){
+                        newMaxHeight = elemOuterHeight;
                     } else{
-                        maxHeight = maxHeight;
+                        newMaxHeight = newMaxHeight;
                     }
                 });
 
-                initHeight(maxHeight);
+                initHeight(newMaxHeight);
             }
 
             /**
@@ -93,10 +95,10 @@
                 // Wait until all images are loaded
                 if(settings.afterLoad){
                     $(window).load(function(){
-                        maxHeight();
+                        maxHeight(settings.maxHeight);
                     });
                 } else{
-                    maxHeight();
+                    maxHeight(settings.maxHeight);
                 }
             }
         });
