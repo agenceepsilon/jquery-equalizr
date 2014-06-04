@@ -18,50 +18,50 @@ Apply the greater height has all the same columns.
 
 Specify the class of elements to target. If the option is empty, the plugin will target children in the class that initializes the plugin.
 
+    type: class/string
     default: ""
-    option: string
 
 ### rowClass
 
 Specify the class applied to the main element. If the option is empty, the plugin will apply the default class.
 
+    type: class/string
     default: "row-equalizr"
-    option: string
 
 ### colClass
 
 Specify the class applied to the child elements. If the option is empty, the plugin will apply the default class.
 
+    type: class/string
     default: "col-equalizr"
-    option: string
     
 ### maxHeight
 
 Specify a maximum height to child elements. If the specified maximum height is smaller than the maximum height of a child is the greatest height of the child is applied.
 
+    type: number
     default: ""
-    option: integer
 
 ### animation
 
 Specify whether to play the animation.
 
+    type: boolean
     default: true
-    option: boolean
 
 ### duration
 
 Specify the time of the animation.
 
+    type: number
     default: 400
-    option: integer
 
 ### afterLoad
 
 Specify whether the plugin should start before or after the loading of all images.
 
+    type: boolean
     default: false
-    option: boolean
 
 ## Initialize
 
