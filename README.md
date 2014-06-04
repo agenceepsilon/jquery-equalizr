@@ -4,16 +4,6 @@ Apply the greater height has all the same columns.
 
 ## Parameters
 
-| Options   | Types   | Defaults         | Others     |
-| --------- | ------- | ---------------- | ---------- |
-| elemClass | string  | ``""``           | Your class |
-| rowClass  | string  | ``row-equalizr`` | Your class |
-| colClass  | string  | ``col-equalizr`` | Your class |
-| maxHeight | string  | ``""``           | Your class |
-| animation | boolean | ``true``         | ``false``  |
-| duration  | number  | ``400``          | Your time  |
-| afterLoad | boolean | ``false``        | ``true``   |
-
 ### elemClass
 
 Specify the class of elements to target. If the option is empty, the plugin will target children in the class that initializes the plugin.
@@ -74,15 +64,13 @@ Target parent block that contains columns / modules to adjust.
 ### 2.0.0
 
 * News options:
-    * ``maxHeight``
-    
+    * ``maxHeight`` ([#2](https://github.com/agenceepsilon/jquery-equalizr/issues/2))
 * Changing the names of options:
     * ``classSelector`` change to ``elemClass``
     * ``classRow`` change to ``rowClass``
     * ``classCol`` change to ``colClass``
     * ``animate`` change to ``animation``
     * ``animateTime`` change to ``duration``
-    
 * Rewriting the code
 
 ### 1.0.1
