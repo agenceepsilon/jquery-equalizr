@@ -4,38 +4,64 @@ Apply the greater height has all the same columns.
 
 ## Parameters
 
-| Options       | Types   | Defaults         | Others            |
-| ------------- | ------- | ---------------- | ----------------- |
-| classSelector | string  | ``""``           | Choose your class |
-| classRow      | string  | ``row-equalizr`` | Choose your class |
-| classCol      | string  | ``col-equalizr`` | Choose your class |
-| animate       | boolean | ``true``         | ``false``         |
-| animateTime   | number  | ``400``          | Choose your time  |
-| afterLoad     | boolean | ``false``        | ``true``          |
+| Options   | Types   | Defaults         | Others     |
+| --------- | ------- | ---------------- | ---------- |
+| elemClass | string  | ``""``           | Your class |
+| rowClass  | string  | ``row-equalizr`` | Your class |
+| colClass  | string  | ``col-equalizr`` | Your class |
+| maxHeight | string  | ``""``           | Your class |
+| animation | boolean | ``true``         | ``false``  |
+| duration  | number  | ``400``          | Your time  |
+| afterLoad | boolean | ``false``        | ``true``   |
 
-### classSelector
+### elemClass
 
-Specify the class of columns / modules to target, if it is empty, it will direct children of the class that initializes the plugin.
+Specify the class of elements to target. If the option is empty, the plugin will target children in the class that initializes the plugin.
 
-### classRow
+    default: ""
+    option: string
 
-Change the default class applied.
+### rowClass
 
-### classCol
+Specify the class applied to the main element. If the option is empty, the plugin will apply the default class.
 
-Change the default class applied.
+    default: "row-equalizr"
+    option: string
 
-### animate
+### colClass
 
-Select ``true`` to animate the new height of the columns.
+Specify the class applied to the child elements. If the option is empty, the plugin will apply the default class.
 
-### animateTime
+    default: "col-equalizr"
+    option: string
+    
+### maxHeight
 
-Choose the time of the animation.
+Specify a maximum height to child elements.
+
+    default: ""
+    option: integer
+
+### animation
+
+Specify whether to play the animation.
+
+    default: true
+    option: boolean
+
+### duration
+
+Specify the time of the animation.
+
+    default: 400
+    option: integer
 
 ### afterLoad
 
-Initialize the new height after loading all images.
+Specify whether the plugin should start before or after the loading of all images.
+
+    default: false
+    option: boolean
 
 ## Initialize
 
@@ -44,6 +70,20 @@ Target parent block that contains columns / modules to adjust.
     $(".row").equalizr();
 
 ## Changelogs
+
+### 2.0.0
+
+* News options:
+    * ``maxHeight``
+    
+* Changing the names of options:
+    * ``classSelector`` -> ``elemClass``
+    * ``classRow`` -> ``rowClass``
+    * ``classCol`` -> ``colClass``
+    * ``animate`` -> ``animation``
+    * ``animateTime`` -> ``duration``
+    
+* Rewriting the code
 
 ### 1.0.1
 
