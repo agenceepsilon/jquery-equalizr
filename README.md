@@ -77,11 +77,11 @@ Target parent block that contains columns / modules to adjust.
     * ``maxHeight``
     
 * Changing the names of options:
-    * ``classSelector`` -> ``elemClass``
-    * ``classRow`` -> ``rowClass``
-    * ``classCol`` -> ``colClass``
-    * ``animate`` -> ``animation``
-    * ``animateTime`` -> ``duration``
+    * ``classSelector`` change to ``elemClass``
+    * ``classRow`` change to ``rowClass``
+    * ``classCol`` change to ``colClass``
+    * ``animate`` change to ``animation``
+    * ``animateTime`` change to ``duration``
     
 * Rewriting the code
 
