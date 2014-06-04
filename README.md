@@ -57,14 +57,16 @@ Specify whether the plugin should start before or after the loading of all image
 
 Target parent block that contains columns / modules to adjust.
 
-    $(".row").equalizr();
+    $(".row").equalizr({
+        // Options
+    });
 
 ## Changelogs
 
 ### 2.0.0
 
-* News options:
-    * ``maxHeight`` ([#2](https://github.com/agenceepsilon/jquery-equalizr/issues/2))
+* New option:
+    * ``maxHeight`` *([#2](https://github.com/agenceepsilon/jquery-equalizr/issues/2))*
 * Changing the names of options:
     * ``classSelector`` change to ``elemClass``
     * ``classRow`` change to ``rowClass``
@@ -75,7 +77,7 @@ Target parent block that contains columns / modules to adjust.
 
 ### 1.0.1
 
-* Fix no animate wrong height ([#1](https://github.com/agenceepsilon/jquery-equalizr/issues/1))
+* Fix no animate wrong height *([#1](https://github.com/agenceepsilon/jquery-equalizr/issues/1))*
 
 ### 1.0.0
 
