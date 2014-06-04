@@ -37,7 +37,7 @@ Specify the class applied to the child elements. If the option is empty, the plu
     
 ### maxHeight
 
-Specify a maximum height to child elements.
+Specify a maximum height to child elements. If the specified maximum height is smaller than the maximum height of a child is the greatest height of the child is applied.
 
     default: ""
     option: integer
