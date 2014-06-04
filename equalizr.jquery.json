@@ -2,7 +2,7 @@
     "name": "equalizr",
     "title": "jQuery Equalizr",
     "description": "Easily create columns of the same height!",
-    "version": "2.0.0-rc.1",
+    "version": "2.0.0",
     "keywords": [
         "jquery",
         "equal",

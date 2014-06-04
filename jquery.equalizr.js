@@ -1,7 +1,7 @@
 /**
  * jQuery Equalizr (https://github.com/agenceepsilon/jquery-equalizr)
  *
- * @version 2.0.0-rc.1
+ * @version 2.0.0
  * @author Agence Epsilon (http://www.agenceepsilon.com)
  *
  * @copyright 2014 Agence Epsilon
