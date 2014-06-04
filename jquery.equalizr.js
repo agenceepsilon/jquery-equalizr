@@ -1,5 +1,5 @@
 /**
- * jQuery Equilizr (https://github.com/agenceepsilon/jquery-equalizr)
+ * jQuery Equalizr (https://github.com/agenceepsilon/jquery-equalizr)
  *
  * @version 2.0.0-beta.1
  * @author Agence Epsilon (http://www.agenceepsilon.com)
@@ -36,16 +36,19 @@
             }
 
             /**
+             * maxHeight
+             *
              * Find the greatest height
+             *
              */
             function maxHeight(){
                 var maxHeight = 0;
 
                 $elemChild.each(function(){
-                    var elemHeight = $(this).outerHeight();
+                    var elemOuterHeight = $(this).outerHeight();
 
-                    if(elemHeight > maxHeight){
-                        maxHeight = elemHeight;
+                    if(elemOuterHeight > maxHeight){
+                        maxHeight = elemOuterHeight;
                     } else{
                         maxHeight = maxHeight;
                     }
@@ -55,6 +58,8 @@
             }
 
             /**
+             * initHeight
+             *
              * Loading new heights
              *
              * @param maxHeight
