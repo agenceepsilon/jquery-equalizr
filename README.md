@@ -24,10 +24,17 @@ Specify the class applied to the child elements. If the option is empty, the plu
 
     type: class/string
     default: "col-equalizr"
-    
+
+### minHeight
+
+Specify a minimum height to child elements.
+
+    type: number
+    default: ""
+
 ### maxHeight
 
-Specify a maximum height to child elements. If the specified maximum height is smaller than the maximum height of a child is the greatest height of the child is applied.
+Specify a maximum height to child elements.
 
     type: number
     default: ""
@@ -65,7 +72,8 @@ Target parent block that contains columns / modules to adjust.
 
 ### 2.0.0
 
-* New option:
+* News options:
+    * ``minHeight``
     * ``maxHeight`` *([#2](https://github.com/agenceepsilon/jquery-equalizr/issues/2))*
 * Changing the names of options:
     * ``classSelector`` change to ``elemClass``

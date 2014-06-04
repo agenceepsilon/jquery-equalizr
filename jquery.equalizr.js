@@ -1,7 +1,7 @@
 /**
  * jQuery Equalizr (https://github.com/agenceepsilon/jquery-equalizr)
  *
- * @version 2.0.0-beta.3
+ * @version 2.0.0-rc.1
  * @author Agence Epsilon (http://www.agenceepsilon.com)
  *
  * @copyright 2014 Agence Epsilon
@@ -17,6 +17,7 @@
             elemClass: "",
             rowClass: "row-equalizr",
             colClass: "col-equalizr",
+            minHeight: "",
             maxHeight: "",
             animation: true,
             duration: 400,
@@ -40,23 +41,29 @@
              * maxHeight
              *
              * Find the greatest height
-             *
-             * @param maxHeight
              */
-            function maxHeight(maxHeight){
-                var newMaxHeight = maxHeight;
+            function maxHeight(){
+                var newHeight = 0;
 
                 $elemChild.each(function(){
                     var elemOuterHeight = $(this).outerHeight();
 
-                    if(elemOuterHeight > newMaxHeight){
-                        newMaxHeight = elemOuterHeight;
+                    if(settings.maxHeight){
+                        newHeight = settings.maxHeight;
                     } else{
-                        newMaxHeight = newMaxHeight;
+                        if(elemOuterHeight > newHeight){
+                            newHeight = elemOuterHeight;
+                        } else{
+                            newHeight = newHeight;
+                        }
+                    }
+
+                    if(settings.minHeight > maxHeight){
+                        newHeight = settings.minHeight;
                     }
                 });
 
-                initHeight(newMaxHeight);
+                initHeight(newHeight);
             }
 
             /**
@@ -95,10 +102,10 @@
                 // Wait until all images are loaded
                 if(settings.afterLoad){
                     $(window).load(function(){
-                        maxHeight(settings.maxHeight);
+                        maxHeight();
                     });
                 } else{
-                    maxHeight(settings.maxHeight);
+                    maxHeight();
                 }
             }
         });
