@@ -11,7 +11,7 @@
         "grunt-tasks"
     ],
     "dependencies": {
-        "jquery": "~1.8.0"
+        "jquery": "~1.11.2"
     },
     "keywords": [
         "jquery",

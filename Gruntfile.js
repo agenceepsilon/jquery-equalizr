@@ -1,33 +1,44 @@
+// ============================================================================================= //
+//                                       GRUNT - GRUNTFILE                                       //
+// ============================================================================================= //
+
 module.exports = function(grunt){
-    var config = {
-        pkg: grunt.file.readJSON('package.json'),
-        env: process.env
-    };
-    grunt.util._.extend(config, loadConfig('./grunt-tasks/'));
-    grunt.initConfig(config);
+    // ------------------------------------------------------------------------- //
+    // PLUGIN - TIME GRUNT
+    // ------------------------------------------------------------------------- //
 
-    function loadConfig(path){
-        var glob = require('glob');
-        var object = {};
-        var key;
+    require('time-grunt')(grunt);
 
-        glob.sync('*', {cwd: path}).forEach(function(option){
-            key = option.replace(/\.js$/, '');
-            object[key] = require(path + option);
-        });
+    // ------------------------------------------------------------------------- //
+    // CONFIGURATION
+    // ------------------------------------------------------------------------- //
 
-        return object;
-    }
+    require('load-grunt-config')(grunt, {
+        data: {
+            dist: 'dist',
+            src: 'src'
+        }
+    });
 
-    // ------------------------------------------ //
-    // GLOBAL PLUGINS LOADING
-    // ------------------------------------------ //
-    require('load-grunt-tasks')(grunt);
-
-    // ------------------------------------------ //
+    // ------------------------------------------------------------------------- //
     // TASKS
-    // ------------------------------------------ //
+    // ------------------------------------------------------------------------- //
+
+    /**
+     * Task: default
+     * Description: Grunt default task.
+     */
+    grunt.registerTask('default', [
+        'js'
+    ]);
+
+    /**
+     * Task: js
+     * Description: Check and minify the JavaScript files.
+     */
     grunt.registerTask('js', [
+        'jshint',
+        'copy',
         'uglify'
     ]);
 };
