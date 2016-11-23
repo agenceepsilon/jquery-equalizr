@@ -9,8 +9,8 @@
  *
  */
 
-(function($){
-    $.fn.equalizr = function(options){
+(function ($) {
+    $.fn.equalizr = function (options) {
 
         // Default settings
         var defaults = {
@@ -26,14 +26,14 @@
 
         var settings = $.extend({}, defaults, options);
 
-        return this.each(function(){
+        return this.each(function () {
             var $elem = $(this),
                 $elemChild;
 
             // Initiate the chilren element
-            if(settings.elemClass){
+            if (settings.elemClass) {
                 $elemChild = settings.elemClass;
-            } else{
+            } else {
                 $elemChild = $elem.children();
             }
 
@@ -42,23 +42,23 @@
              *
              * Find the greatest height
              */
-            function maxHeight(){
+            function maxHeight() {
                 var newHeight = 0;
 
-                $elemChild.each(function(){
+                $elemChild.each(function () {
                     var elemOuterHeight = $(this).outerHeight();
 
-                    if(settings.maxHeight){
+                    if (settings.maxHeight) {
                         newHeight = settings.maxHeight;
-                    } else{
-                        if(elemOuterHeight > newHeight){
+                    } else {
+                        if (elemOuterHeight > newHeight) {
                             newHeight = elemOuterHeight;
-                        } else{
+                        } else {
                             newHeight = newHeight;
                         }
                     }
 
-                    if(settings.minHeight > maxHeight){
+                    if (settings.minHeight > maxHeight) {
                         newHeight = settings.minHeight;
                     }
                 });
@@ -73,8 +73,8 @@
              *
              * @param maxHeight
              */
-            function initHeight(maxHeight){
-                $elemChild.each(function(){
+            function initHeight(maxHeight) {
+                $elemChild.each(function () {
                     var elemHeight = $(this).height(),
                         elemOuterHeight = $(this).outerHeight(),
                         heightGap = elemOuterHeight - elemHeight,
@@ -82,29 +82,29 @@
 
                     $(this).addClass(settings.colClass);
 
-                    if(settings.animation){
+                    if (settings.animation) {
                         $(this).animate({
                             "height": newHeight
                         }, settings.duration);
                     }
-                    else{
+                    else {
                         $(this).css("height", newHeight);
                     }
                 });
             }
 
             // Activate the plugin if there more than one child.
-            if($elemChild.length > 1){
+            if ($elemChild.length > 1) {
 
                 // Add class to main element
                 $elem.addClass(settings.rowClass);
 
                 // Wait until all images are loaded
-                if(settings.afterLoad){
-                    $(window).load(function(){
+                if (settings.afterLoad) {
+                    $(window).load(function () {
                         maxHeight();
                     });
-                } else{
+                } else {
                     maxHeight();
                 }
             }

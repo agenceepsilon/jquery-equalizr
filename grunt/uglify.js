@@ -15,6 +15,7 @@ module.exports = {
         '*\n' +
         '*/\n'
     },
+
     js: {
         files: {
             '<%= dist %>/jquery.equalizr.min.js': '<%= dist %>/jquery.equalizr.js'
