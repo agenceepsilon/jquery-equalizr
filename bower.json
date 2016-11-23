@@ -10,9 +10,6 @@
         "equalizr.jquery.json",
         "grunt-tasks"
     ],
-    "dependencies": {
-        "jquery": "~1.11.2"
-    },
     "keywords": [
         "jquery",
         "equal",
