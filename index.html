@@ -60,11 +60,13 @@
         </div>
     </div>
 </div>
-<script src="src/vendor/jquery/dist/jquery.js"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="dist/jquery.equalizr.js"></script>
 <script>
     $(document).ready(function(){
-        $(".js-equalizr").equalizr();
+        $(".js-equalizr").equalizr({
+            // ...
+        });
     });
 </script>
 </body>

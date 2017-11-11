@@ -14,11 +14,11 @@
 
         // Default settings
         var defaults = {
-            elemClass: "",
-            rowClass: "row-equalizr",
-            colClass: "col-equalizr",
-            minHeight: "",
-            maxHeight: "",
+            elemClass: '',
+            rowClass: 'row-equalizr',
+            colClass: 'col-equalizr',
+            minHeight: '',
+            maxHeight: '',
             animation: true,
             duration: 400,
             afterLoad: false
@@ -84,11 +84,11 @@
 
                     if (settings.animation) {
                         $(this).animate({
-                            "height": newHeight
+                            'height': newHeight
                         }, settings.duration);
                     }
                     else {
-                        $(this).css("height", newHeight);
+                        $(this).css('height', newHeight);
                     }
                 });
             }
